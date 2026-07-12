@@ -517,6 +517,7 @@ pub fn init(
         &derived_config.font,
         font_size,
     );
+    errdefer app.font_grid_set.deref(font_grid_key);
 
     // Build our size struct which has all the sizes we need.
     const size: rendererpkg.Size = size: {
